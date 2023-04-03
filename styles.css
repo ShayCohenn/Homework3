@@ -1,0 +1,22 @@
+body{
+    height: 100dvh;
+    width: 100dvw;
+    background: #2f3640;
+    color: whitesmoke;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.Btn button{
+    background-color: #e84118;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+
+.Btn button:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.5s;
+}

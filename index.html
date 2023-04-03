@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork</title>
+    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <label for="timeFormat">Time Format:</label><br>
+        <select id="timeFormat" class="timeFormat">
+            <option value="24hours">24 hours</option>
+            <option value="AMPM">AM / PM</option>
+        </select>
+        <div class="clock">
+            <div class="clockNums" id="clockNums"></div>
+            <div class="clockSession" id="clockSession"></div>
+        </div>
+        <div class="Btn">
+            <a href="menu.html">
+                <button>The Assignments </button>
+            </a>
+        </div>
+    </div>
+    <script>
+        function mainClock() {
+            let localTime = new Date();
+            let hrs = localTime.getHours();
+            let min = localTime.getMinutes().toString().padStart(2, "0");
+            let sec = localTime.getSeconds().toString().padStart(2, "0");
+            const dropDown = document.getElementById('timeFormat');
+            let clockTime = ``;
+            if (dropDown.selectedIndex === 0) {
+                hrs = hrs.toString().padStart(2, "0");
+                clockTime = `${hrs}:${min}:${sec}`;
+                document.getElementById('clockNums').textContent = clockTime;
+                document.getElementById('clockSession').textContent = ""
+            }
+            else {
+                hrs > 12 ? (document.getElementById('clockSession').textContent = "PM") :
+                    (document.getElementById('clockSession').textContent = "AM")
+                hrs > 12 && (hrs -= 12)
+
+                hrs = hrs.toString().padStart(2, "0");
+                clockTime = `${hrs}:${min}:${sec}`;
+                document.getElementById('clockNums').textContent = clockTime
+            }
+        }
+
+        setInterval(mainClock, 20)
+    </script>
+</body>
+
+</html>

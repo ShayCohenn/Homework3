@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="nameStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="txt" placeholder="Type your name here">
+        <div class="Btn"><button onclick="nameCheck()">CLICK</button></div>
+        <div class="res"><span id="res"></span></div>
+    </div>
+
+    <script>
+        function nameCheck() {
+            let charSum = 0;
+            let name = txt.value;
+            let result = document.getElementById('res');
+            let reversedName = name.split("").reverse().join("");
+            result.innerHTML = `Your name has ${name.length} letters and is spelled "${reversedName}" backwards `;
+        }
+
+    </script>
+</body>
+
+</html>

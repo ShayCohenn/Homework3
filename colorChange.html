@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="colorChange.css">
+    <title>The Color Change</title>
+</head>
+
+<body>
+    <div class="container">
+        <span class="head">Change The Background Color To Whatever You Like</span>
+        <div class="txt">
+            <input type="text" id="txt" placeholder="Type a color name">
+            <button onclick="btnColorChange()">Change</button>
+        </div>
+        <span class="secondaryHead">Pick A Color From The List If You Want</span>
+        <select class="dropDown" id="dropDown" onchange="selectColorChange()">
+            <option>Pick A Color</option>
+            <option>red</option>
+            <option>orange</option>
+            <option>yellow</option>
+            <option>green</option>
+            <option>aqua</option>
+            <option>blue</option>
+            <option>purple</option>
+            <option>pink</option>
+        </select>
+        <div class="reset">
+            <button onclick="resetBtn()">RESET</button>
+        </div>
+    </div>
+    <script>
+        const a = document.querySelector('.container');
+        function btnColorChange() {
+            let colorName = txt.value;
+            if (CSS.supports("background-color", colorName)) {
+                a.style.backgroundColor = colorName;
+            }
+            else if (colorName == "")
+                alert("You didn't type anything :(")
+            else {
+                alert("Error!!! Either I don't have this color or you made that up!");
+            }
+        }
+
+        function selectColorChange(){
+            const colorSelection = document.getElementById('dropDown');
+            const selectedColor = colorSelection.options[colorSelection.selectedIndex];
+            const colorTxt = selectedColor.textContent;
+            if(colorTxt != "Pick A Color")
+            a.style.backgroundColor = colorTxt;
+        }
+
+        function resetBtn(){
+            a.style.backgroundColor = "#2f3640";
+        }
+    </script>
+</body>
+
+</html>

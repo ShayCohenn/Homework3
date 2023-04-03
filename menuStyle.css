@@ -1,0 +1,24 @@
+.head{
+    position: absolute;
+    width: 100dvw;
+    top: 5%;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.menuBtns{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 10%;
+}
+
+.menuBtns button{
+    height: 6rem;
+    width: 9rem;
+    margin: 3rem;
+    font-size: 1rem;
+}

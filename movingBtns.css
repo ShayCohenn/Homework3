@@ -1,0 +1,12 @@
+.head{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%);
+}
+#btn{
+    position: relative;
+    overflow: hidden;
+    height: 4rem;
+    width: 6rem;
+}

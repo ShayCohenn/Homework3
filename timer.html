@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="timerStyle.css">
+</head>
+
+<body>
+    <div class="time" id="time">00:00:00:00</div>
+    <script>
+        let timeLeft = 30 * 1000;
+        let timeString = ``;
+        let hasStopped = false;
+        const interval = setInterval(() => {
+            if (timeLeft < 0) {
+                clearInterval(interval);
+                document.getElementById('time').textContent = "00:00:00:00";
+                hasStopped = true;
+                alert("KABOOMMM!!!!!");
+            }
+            if (!hasStopped) {
+                const secondsLeft = Math.floor(timeLeft / 1000);
+                const millisecondsLeft = (timeLeft % 1000) / 10;
+                timeString = `00:00:${secondsLeft.toString().padStart(2, "0")}:${millisecondsLeft.toString().padStart(2, "0")}`
+                document.getElementById('time').textContent = timeString;
+                timeLeft -= 10;
+            }
+        }, 10);
+    </script>
+</body>
+
+</html>

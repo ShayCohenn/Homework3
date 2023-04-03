@@ -1,0 +1,103 @@
+.container{
+    height: 100dvh;
+    width: 100dvw;
+}
+.head{
+    position: relative;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.txt{
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 3rem;
+    display: flex;
+    max-width: 40rem;
+    width: 70%;
+}
+
+.txt input[type=text]{
+    width: 75%;
+    color: #e84118;
+    background: transparent;
+    outline: none;
+    border: 3px solid black;
+    font-size: 1.2rem;
+}
+
+.txt input[type=text]::placeholder{
+    color: #e842189d;
+}
+
+.txt input[type=text]:hover{
+    background: #363e49;
+}
+
+.txt input[type=text]:focus{
+    background: #454f5c
+}
+
+.txt button{
+    width: 25%;
+    overflow: hidden;
+    word-wrap: break-word;
+    background: rgb(36, 36, 36);
+    color: #e84118;
+    outline: none;
+    border: 3px solid black;
+}
+
+.txt button:hover{
+    background: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.secondaryHead{
+    position: relative;
+    top: 25%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.dropDown{
+    position: relative;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 4rem;
+    width: 15rem;
+    max-width: 50%;
+    background: #e84118;
+    border: 2px solid black;
+    font-size: 1.2rem;
+}
+
+.reset{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+}
+
+.reset button{
+    height: 3rem;
+    width: 10rem;
+    max-width: 50%;
+    background: #e84118;
+    border: 2px solid black;
+    font-size: 1.2rem;
+}
+
+.reset button:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #cc3915;
+}

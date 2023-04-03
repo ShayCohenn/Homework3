@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Moving Button</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="movingBtns.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <spand>Try To Catch The Button</spand>
+        </div>
+        <div class="playArea Btn">
+            <button id="btn" onclick="clickBtn()">CLICK</button>
+        </div>
+    </div>
+    <script>
+        let btnClicked = false;
+        function clickBtn() {
+            btnClicked = true;
+            alert("You Won!")
+        }
+        function rndMove() {
+            btnClicked = false;
+            if (!btnClicked) {
+                const button = document.getElementById("btn");
+
+                // Get the dimensions of the window
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                // Set the initial position of the button
+                let xPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
+                let yPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
+                button.style.left = xPos + "px";
+                button.style.top = yPos + "px";
+                // Calculate the new position of the button
+                xPos += Math.floor(Math.random() * 200) - 100;
+                yPos += Math.floor(Math.random() * 200) - 100;
+
+                // Make sure the button stays within the window bounds
+                xPos = Math.max(0, Math.min(windowWidth - button.offsetWidth, xPos));
+                yPos = Math.max(0, Math.min(windowHeight - button.offsetHeight, yPos));
+
+                // Update the position of the button
+                button.style.left = xPos + "px";
+                button.style.top = yPos + "px";
+                button.style.transition = "1s"
+            }
+        }
+        function btnMove() {
+            if (!btnClicked) {
+                const button = document.getElementById("btn");
+
+                // Get the dimensions of the window
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                // Set the initial position of the button
+                let xPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
+                let yPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
+                button.style.left = xPos + "px";
+                button.style.top = yPos + "px";
+
+            }
+        }
+        setInterval(() => {
+            rndMove();
+        }, 500);
+    </script>
+</body>
+
+</html>

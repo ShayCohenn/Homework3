@@ -1,0 +1,51 @@
+.container{
+    height: 100dvh;
+    width: 100dvw;
+}
+.container input[type=text]{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 20rem;
+    max-width: 60%;
+    background-color: transparent;
+    color: #e84118;
+    outline: none;
+    border: 3px solid black;
+    height: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.container input[type=text]::placeholder{
+    color: #e842189d;
+}
+.container input[type=text]:hover{
+    background: #363e49;
+}
+
+.container input[type=text]:focus{
+    background: #454f5c
+}
+
+.Btn{
+    position: relative;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+}
+
+.Btn button{
+    height: 4rem;
+    width: 10rem;
+    font-size: 1rem;
+}
+
+.res{
+    position: relative;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}

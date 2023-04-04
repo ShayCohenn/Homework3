@@ -9,4 +9,5 @@
     overflow: hidden;
     height: 4rem;
     width: 6rem;
+    transform: translate(-50%,-50%);
 }

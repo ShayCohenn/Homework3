@@ -35,13 +35,13 @@
                 const windowHeight = window.innerHeight;
 
                 // Set the initial position of the button
-                let xPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
-                let yPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
+                let xPos = Math.floor(Math.random() * windowWidth)
+                let yPos = Math.floor(Math.random() * windowHeight)
                 button.style.left = xPos + "px";
                 button.style.top = yPos + "px";
                 // Calculate the new position of the button
-                xPos += Math.floor(Math.random() * 200) - 100;
-                yPos += Math.floor(Math.random() * 200) - 100;
+                xPos += Math.floor(Math.random());
+                yPos += Math.floor(Math.random());
 
                 // Make sure the button stays within the window bounds
                 xPos = Math.max(0, Math.min(windowWidth - button.offsetWidth, xPos));
@@ -50,28 +50,12 @@
                 // Update the position of the button
                 button.style.left = xPos + "px";
                 button.style.top = yPos + "px";
-                button.style.transition = "1s"
-            }
-        }
-        function btnMove() {
-            if (!btnClicked) {
-                const button = document.getElementById("btn");
-
-                // Get the dimensions of the window
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-
-                // Set the initial position of the button
-                let xPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
-                let yPos = Math.floor(Math.random() * (windowWidth - 2 * 50)) + 50;
-                button.style.left = xPos + "px";
-                button.style.top = yPos + "px";
-
+                button.style.transition = "0.75s"
             }
         }
         setInterval(() => {
             rndMove();
-        }, 500);
+        }, 300);
     </script>
 </body>
 
